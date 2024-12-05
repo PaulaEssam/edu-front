@@ -23,6 +23,9 @@
             
         }
         .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
             background-color: #004080; /* يمكنك تعديل اللون ليتناسب مع اللوجو */
         }
@@ -55,6 +58,23 @@
         .login-form button:hover {
             background-color: #003366; /* يمكنك تعديل اللون ليتناسب مع اللوجو */
         }
+
+        @media (max-width: 768px) {
+            .login-form {
+                width: 100%;
+                padding: 20px;
+            }
+            .logo img {
+                max-width: 100px;
+            }
+            .login-form {
+                padding: 20px;
+            }
+            .login-form input, .login-form button {
+                padding: 8px;
+                margin-bottom: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -63,7 +83,7 @@
         <div class="login-form">
             <h2>تسجيل الدخول</h2>
             <form>
-                <input type="text" placeholder="الايميل" required>
+                <input type="number" placeholder="رقم تليفون الطالب" required>
                 <input type="password" placeholder="كلمة المرور" required>
                 <button type="submit">تسجيل الدخول</button>
             </form>
