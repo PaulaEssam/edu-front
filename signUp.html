@@ -23,11 +23,18 @@
             width: 800px;
         }
         .logo {
+            /* padding: 20px;
+            background-color: #004080;  */
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
             background-color: #004080; /* يمكنك تعديل اللون ليتناسب مع اللوجو */
+            
         }
         .logo img {
             max-width: 150px;
+        
         }
         .login-form {
             padding: 40px;
@@ -36,7 +43,8 @@
             margin-bottom: 20px;
             color: #004080; /* يمكنك تعديل اللون ليتناسب مع اللوجو */
         }
-        .login-form input {
+        .login-form input,
+        .login-form select {
             width: 100%;
             padding: 10px;
             margin-bottom: 20px;
@@ -55,6 +63,29 @@
         .login-form button:hover {
             background-color: #003366; /* يمكنك تعديل اللون ليتناسب مع اللوجو */
         }
+        .select{
+            display: flex; gap: 10px; flex-direction: row-reverse;
+        }
+        @media (max-width: 768px) {
+            .select {
+                flex-direction: column;
+                align-items: center;
+            }
+            .login-form {
+                width: 100%;
+                padding: 20px;
+            }
+            .logo img {
+                max-width: 100px;
+            }
+            .login-form {
+                padding: 20px;
+            }
+            .login-form input, .login-form button {
+                padding: 8px;
+                margin-bottom: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -62,13 +93,75 @@
         
         <div class="login-form">
             <h2>انشاء حساب </h2>
-            <form>
-                <input type="text" name="username" placeholder="اسم المستخدم" required>
-                <input type="number" name="phone" placeholder="رقم التليفون" required min="0">
+            <form enctype="multipart/form-data" method="post" action=""> 
+                <div class="select">
+                    <input type="text" name="username" placeholder="الاسم الاول " required>
+                    <input type="text" name="username" placeholder="الاسم الثاني " required>
+                    <input type="text" name="username" placeholder="الاسم الثالث " required>
+                    <input type="text" name="username" placeholder="الاسم الرابع " required>
+                </div>
+                <div class="select">
+                    <input type="number" name="student_phone" placeholder=" رقم التليفون الطالب" required min="0" required>
+                    <input type="number" name="parent_phone" placeholder="رقم التليفون ولي الامر"  required min="0" required>
+                </div>
                 <input type="text" name="email" placeholder="الايميل" required>
-                <input type="text" name="location" placeholder="المحافظة" required>
-                <input type="password" name="password" placeholder="كلمة المرور" required>
-
+                <div class="select">
+                    <select name="governorate" required >
+                        <option value="">اختار المحافظة...</option>
+                        <option value="أسوان">أسوان</option>
+                        <option value="أسيوط">أسيوط</option>
+                        <option value="الأقصر">الأقصر</option>
+                        <option value="الإسماعيلية">الإسماعيلية</option>
+                        <option value="الإسكندرية">الإسكندرية</option>
+                        <option value="البحر الأحمر">البحر الأحمر</option>
+                        <option value="البحيرة">البحيرة</option>
+                        <option value="الجيزة">الجيزة</option>
+                        <option value="الدقهلية">الدقهلية</option>
+                        <option value="السويس">السويس</option>
+                        <option value="الشرقية">الشرقية</option>
+                        <option value="الغربية">الغربية</option>
+                        <option value="الفيوم">الفيوم</option>
+                        <option value="القاهرة">القاهرة</option>
+                        <option value="القليوبية">القليوبية</option>
+                        <option value="المنوفية">المنوفية</option>
+                        <option value="المنيا">المنيا</option>
+                        <option value="الوادي الجديد">الوادي الجديد</option>
+                        <option value="بني سويف">بني سويف</option>
+                        <option value="بورسعيد">بورسعيد</option>
+                        <option value="جنوب سيناء">جنوب سيناء</option>
+                        <option value="دمياط">دمياط</option>
+                        <option value="سوهاج">سوهاج</option>
+                        <option value="شمال سيناء">شمال سيناء</option>
+                        <option value="قنا">قنا</option>
+                        <option value="كفر الشيخ">كفر الشيخ</option>
+                        <option value="مطروح">مطروح</option>
+                    </select>
+    
+                    <select name="grade" required >
+                        <option value=""> المرحلة الدراسية...</option>
+                        <option value="الصف الاول">الصف الاول</option>
+                        <option value="الصف الثاني">الصف الثاني</option>
+                        <option value="الصف الثالث">الصف الثالث</option>
+                    </select>
+    
+                    <select name="gender" required >
+                        <option value="">اختار النوع...</option>
+                        <option value="ذكر">ذكر</option>
+                        <option value="انثي">انثي</option>
+                    </select>
+    
+                    <select name="register" required >
+                        <option value="">اختار التسجيل...</option>
+                        <option value="اونلاين">اونلاين</option>
+                        <option value="سنتر">سنتر</option>
+                    </select>
+                </div>
+                <div class="select">
+                    <input type="password" name="password" placeholder="كلمة المرور" required>
+                    <input type="password" name="c_password" placeholder=" تأكيد كلمة المرور" required>
+                </div>
+                <p>صورة الطالب</p>
+                <input type="file" accept="image/*" name="image" required>
                 <button type="submit">انشاء حساب </button>
             </form>
             <a href="login.html" style="text-decoration: none; color: #7424a9;">تسجيل دخول</a>
