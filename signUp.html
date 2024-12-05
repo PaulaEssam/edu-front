@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة تسجيل الدخول</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* يمكنك تعديل اللون ليتناسب مع اللوجو */
+        }
+        .container {
+            display: flex;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            width: 800px;
+        }
+        .logo {
+            padding: 20px;
+            background-color: #004080; /* يمكنك تعديل اللون ليتناسب مع اللوجو */
+        }
+        .logo img {
+            max-width: 150px;
+        }
+        .login-form {
+            padding: 40px;
+        }
+        .login-form h2 {
+            margin-bottom: 20px;
+            color: #004080; /* يمكنك تعديل اللون ليتناسب مع اللوجو */
+        }
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #004080; /* يمكنك تعديل اللون ليتناسب مع اللوجو */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .login-form button:hover {
+            background-color: #003366; /* يمكنك تعديل اللون ليتناسب مع اللوجو */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="login-form">
+            <h2>انشاء حساب </h2>
+            <form>
+                <input type="text" name="username" placeholder="اسم المستخدم" required>
+                <input type="number" name="phone" placeholder="رقم التليفون" required min="0">
+                <input type="text" name="email" placeholder="الايميل" required>
+                <input type="text" name="location" placeholder="المحافظة" required>
+                <input type="password" name="password" placeholder="كلمة المرور" required>
+
+                <button type="submit">انشاء حساب </button>
+            </form>
+            <a href="login.html" style="text-decoration: none; color: #7424a9;">تسجيل دخول</a>
+        </div>
+
+        <div class="logo">
+            <img src="assets/img/لوجو.png" alt="Logo">
+        </div>
+    </div>
+</body>
+</html>
